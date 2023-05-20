@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Higher Order Function    
+        //
+
+        // function xyz (aaaa){
+        //     return aaaa.json();
+        // }
+
+        // let xyz = (aaaa) =>{
+        //     return aaaa.json();
+        // }
+
+
+        // let xyz2 = aaaa =>{
+        //     return aaaa.json();
+        // }
+
+        // let xyz3 = aaaa => aaaa.json();
+        
+
+        // let func = resp => resp.json();
+        // fetch("http://localhost:8088")
+        // .then(func);
+
+
+        let arr = [1,2,3,4,5];
+        let result = [];
+        for(let i=0; i<arr.length; i++){
+            result.push(arr[i] * 2)
+        }
+
+
+        const map = (arr, func) => {            
+            let result = [];
+            for(let i=0; i<arr.length; i++){
+                let tmp = func (arr[i])
+                result.push(tmp)
+            }
+
+            return result;
+        }
+
+        console.log(map(arr, x=>x*2))
+        console.log(map(arr, x=>x*5))
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>XHR</title>
+</head>
+<body>
+  <button>Fetch Data</button>
+  <div id="data-container"></div>
+
+  <script>
+    let btn = document.querySelector('button');
+    btn.addEventListener('click', e => {
+      let xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = e => {
+        if(xhr.readyState === 4 ){
+          document.querySelector('#data-container').innerHTML = xhr.responseText;
+        }
+      }
+      xhr.open('GET', 'demo.html');
+      xhr.send();
+    })
+  </script>
+</body>
+</html>

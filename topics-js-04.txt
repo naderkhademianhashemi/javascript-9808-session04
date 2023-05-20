@@ -1,0 +1,84 @@
+Session 04
+Review	
+	dynamic content
+		innerHTML		
+		createElement &	appendChild				
+		innerHTML vs createElement				
+		
+	Template Engine		
+		Handlebars
+			{{ }}
+			
+	How to add js lib
+		download manualy			
+		cdn			
+		package managers
+		
+	HOME WORK
+--------------------------------------------------------
+
+Topics
+	Ajax - Asyncronous Javascript And XML
+	XMLHttpRequest - xhr
+	
+	xhr sample
+		var r = new XMLHttpRequest();
+		r.open("open", "demo.html")		
+		r.send()
+		***
+		
+		r.onreadystatechange  <--- (1)
+		r.onreadystatechange(() => {
+			if(r.readyState === 4){ //---> XMLHttpRequest.readyState.txt
+				innerHtml = request.responseText;
+			}
+		})
+		***
+	xhr error
+		r.status === 200
+		else 'error!'
+		
+	slow connection
+		disable button
+		show msg OR preloader
+		ajax spinner
+			https://loading.io/
+			http://ajaxload.info
+
+		
+	(1) --> async vs sync
+	Callback
+		callback hell
+	Promise
+		Promise.all
+	
+	Data Interchange
+		Html Snippet
+		Serialization
+			binary
+				protobuf
+				thrift
+			plaintext
+				csv
+				xml
+				json
+				yml
+
+	<Server implementation
+		html Snippet
+		JSON>
+	data.json
+		
+	JSON
+		.parse
+		.stringify
+		
+	Higher-Order Fucntion
+		guard operator
+	Fetch
+		caniuse
+		
+	Pollyfills
+		fetch
+		json2
+		sizzel

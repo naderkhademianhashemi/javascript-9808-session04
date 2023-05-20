@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="http.js"></script>
+</head>
+<body>
+    <button>Load</button>
+    <hr>
+    <div class="container"></div>
+    <script>
+        // let promise = fetch("demo.html");
+        // promise.then(resp =>{
+        //     resp.text().then(text => {
+        //         console.log(text);
+        //     })
+        // });
+
+        fetch("demo.html")
+            .then(resp => resp.text())
+            .then(a => {
+                
+            })
+            ;
+
+        
+        let fetch1 = fetch("demo.html").then(resp => resp.text());
+        let fetch2 = fetch("demo2.html").then(resp => resp.text());
+
+        Promise.all([fetch1, fetch2]).then(arr => console.log(arr));
+        
+        
+        let p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(5); //func(5)
+            }, 2000);
+        });
+
+        let func = a => console.log(a);
+        p.then(func)
+
+        // async function run(){
+        //     let resp = await fetch("demo.html");
+        //     let text = await resp.text();
+        //     console.log(text);
+        // }
+        // run();
+            
+    </script>
+</body>
+</html>

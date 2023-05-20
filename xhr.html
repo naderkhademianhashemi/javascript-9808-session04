@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>click</button> 
+  <div id="load-data"></div>
+
+  <script>
+    document
+      let btn = document.querySelector('button');
+      btn.addEventListener('click', e => {
+        btn.setAttribute('disabled', 'disabled');
+        let dataElem = document.querySelector('#load-data');
+        let req = new XMLHttpRequest();
+        req.onreadystatechange = e => {
+          dataElem.innerHTML = 'Loading'
+          if(req.readyState === 4){
+            if(req.status === 200){
+              dataElem.innerHTML = req.responseText;
+            }else{
+              dataElem.innerHTML = 'ERROR!'
+            }
+            btn.removeAttribute('disabled');
+          }
+        };
+        req.open('GET', 'demo.html');
+        req.send();
+    });
+    
+  </script>
+</body>
+</html>
